@@ -1,0 +1,34 @@
+
+State Machine - |main|startup_timer:STARTUP_TIMER|state_reg
+Name state_reg.s_stop state_reg.s_active state_reg.s_idle 
+state_reg.s_idle 0 0 0 
+state_reg.s_active 0 1 1 
+state_reg.s_stop 1 0 1 
+
+State Machine - |main|ssm2603_controller:SSM2603_CONTROLLER|state_reg
+Name state_reg.s_error state_reg.s_done state_reg.s_perform_config state_reg.s_idle 
+state_reg.s_idle 0 0 0 0 
+state_reg.s_perform_config 0 0 1 1 
+state_reg.s_done 0 1 0 1 
+state_reg.s_error 1 0 0 1 
+
+State Machine - |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|state_func_reg
+Name state_func_reg.s_writeData1 state_func_reg.s_writeData0 state_func_reg.s_writeAddr 
+state_func_reg.s_writeAddr 0 0 0 
+state_func_reg.s_writeData0 0 1 1 
+state_func_reg.s_writeData1 1 0 1 
+
+State Machine - |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|state_reg
+Name state_reg.s_stop_error state_reg.s_stop state_reg.s_clk3a state_reg.s_clk2a state_reg.s_clk1a state_reg.s_clk0a state_reg.s_clk3 state_reg.s_clk2 state_reg.s_clk1 state_reg.s_clk0 state_reg.s_start state_reg.s_idle 
+state_reg.s_idle 0 0 0 0 0 0 0 0 0 0 0 0 
+state_reg.s_start 0 0 0 0 0 0 0 0 0 0 1 1 
+state_reg.s_clk0 0 0 0 0 0 0 0 0 0 1 0 1 
+state_reg.s_clk1 0 0 0 0 0 0 0 0 1 0 0 1 
+state_reg.s_clk2 0 0 0 0 0 0 0 1 0 0 0 1 
+state_reg.s_clk3 0 0 0 0 0 0 1 0 0 0 0 1 
+state_reg.s_clk0a 0 0 0 0 0 1 0 0 0 0 0 1 
+state_reg.s_clk1a 0 0 0 0 1 0 0 0 0 0 0 1 
+state_reg.s_clk2a 0 0 0 1 0 0 0 0 0 0 0 1 
+state_reg.s_clk3a 0 0 1 0 0 0 0 0 0 0 0 1 
+state_reg.s_stop 0 1 0 0 0 0 0 0 0 0 0 1 
+state_reg.s_stop_error 1 0 0 0 0 0 0 0 0 0 0 1 

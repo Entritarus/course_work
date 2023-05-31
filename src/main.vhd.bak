@@ -1,0 +1,69 @@
+library ieee;
+library edi;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use edi.functions.all;
+
+
+entity main is
+	port(
+		clk_50MHz : in sl;
+		btn_reset : in sl;
+		
+		btn_reconfigure : in sl;
+		
+		o_ssm_clk : out sl;
+		
+		inout io_sda : sl;
+		inout io_scl : sl;
+	);
+end entity;
+
+architecture RTL of main is
+
+	signal clk_40kHz : sl;
+	signal clk_10MHz : sl;
+	signal ssm2603_sda_out, ssm2603_sda_in, ssm2603_sda_oe: sl;
+	signal ssm2603_scl_out, ssm2603_scl_in, ssm2603_scl_oe: sl;
+	
+begin
+	CLK_DIVIDER_PULSE: entity work.clock_divider_duty
+		generic map (
+			DIVISION_RATIO => 1250,
+			DUTY => 50
+		)
+		port map (
+			clk_in => clk_50MHz,
+			clk_out => clk_40kHz
+		);
+	CLK_DIVIDER_SSM: entity work.clock_divider_duty
+		generic map (
+			DIVISION_RATIO => 5,
+			DUTY => 50
+		)
+		port map (
+			clk_in => clk_50MHz,
+			clk_out => clk_10MHz
+		);
+	SSM2603_INIT: entity rtu.ssm2603_initializer
+		port map (
+			clk => clk_400kHz,
+			rst => btn_reset,
+			
+			reconfigure => not btn_reconfigure,
+			
+			o_sda_oe => ssm2603_sda_oe,
+			i_sda    => ssm2603_scl_in,
+			o_sda    => ssm2603_scl_out,
+			o_scl_oe => ssm2603_scl_oe,
+			i_scl    => ssm2603_scl_in,
+			o_scl    => ssm2603_scl_out
+		);
+	
+	o_ssm_clk <= clk_10MHz;
+	
+	io_sda <= adv_sda_out when adv_sda_oe = '1' else
+            'Z';
+	io_scl <= adv_scl_out when adv_scl_oe = '1' else
+            'Z';
+end entity;

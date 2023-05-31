@@ -1,0 +1,46 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+entity clock_divider_duty is
+  generic(
+    DIVISION_RATIO : natural;
+    DUTY : natural := 50
+  );
+  port(
+    rst     : in  sl;
+    clk_in  : in  sl;
+    clk_out : out sl
+  );
+end entity;
+
+architecture RTL of clock_divider_duty is
+  signal counter_reg, counter_next : unsigned(log2c(DIVISION_RATIO)-1 downto 0) := 0;
+  signal clk_div : std_logic := '0';
+begin
+
+  -- reg-state logic
+  process (clk_in) is
+  begin
+    if rst = '1' then
+      counter_reg <= 0;
+    else
+      if rising_edge(clk_in) then
+        counter_reg <= counter_next;
+      else
+        counter_reg <= counter_reg;
+      end if;
+    end if;
+  end process;
+
+  -- next-state logic
+  counter_next <= counter_reg + 1 when counter_reg /= DIVISION_RATIO-1 else
+                  0;
+  clk_div <= '1' when counter_reg < DIVISION_RATIO*DUTY/100 else
+             '0';
+
+  -- outputs
+  clk_out <= clk_div;
+
+end architecture;

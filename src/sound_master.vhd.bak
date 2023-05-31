@@ -1,0 +1,126 @@
+library ieee;
+library edi;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use edi.functions.all;
+use edi.data_types.all;
+
+entity sound_master is
+  port(
+    clk : in sl; -- FCLK = 46.08 MHz
+    rst : in sl;
+    
+    i_data : in slv; -- data to playback
+    o_ready : in slv;
+    
+    o_data : out slv; -- data from record
+    o_valid : out sl;
+    
+    o_bclk : out sl; -- sound codec interface
+    o_pbdat : out sl; --
+    i_recdat : in sl; --
+    o_lrc : out sl; --
+  );
+end entity;
+
+architecture RTL of sound_master is
+  constant CLK_DIV_RATIO : natural := 10; 
+  signal int_en : natural;
+  
+  signal piso_load : sl := '0';
+  signal piso_en   : sl := '0';
+  signal piso_data : slv := '0';
+  
+  signal sipo_data : sl := '0';
+  signal sipo_en : sl := '0';
+  
+  constant DATA_WIDTH : natural := 24;
+  signal ctr_reg, ctr_next := unsigned(log2c(DATA_WIDTH)-1 downto 0) := 0;
+  
+  signal bclk_reg, bclk_next : sl := '0';
+  signal lrc_reg, lrc_next   : sl := '1';
+  
+  signal ctr_is_full : sl;
+begin
+  entity rtu.piso_register
+    port map(
+      clk        => clk,
+      rst        => rst,
+      i_load     => piso_load,
+      i_enable   => piso_en,
+      i_data     => piso_data,
+      o_data     => o_pbdat
+    );
+    
+  entity rtu.sipo_register
+    port map (
+      clk       => clk,
+      rst       => rst,
+      i_enable  => sipo_en,
+      i_data    => i_recdat,
+      o_data    => sipo_data
+    );
+  
+  entity work.clock_divider_pulse
+    generic map (
+      DIVISION_RATIO => CLK_DIV_RATIO,
+    )
+    port map (
+      rst => rst,
+      i_clk => clk,
+      o_en => int_en
+    );
+  
+  -- reg-state logic
+  process(clk) is
+  begin
+    if rst = '1' then
+      ctr_reg <= 0;
+      bclk_reg <= '0';
+      lrc_reg <= '1';
+    else
+      if rising_edge(clk) then
+        if (int_en) then
+          ctr_reg  <= ctr_next;
+          bclk_reg <= bclk_next;
+          lrc_reg  <= lrc_next;
+        else
+          ctr_reg  <= ctr_reg;
+          bclk_reg <= bclk_reg;
+          lrc_reg  <= lrc_reg;
+        end if;
+      end if;
+    end if;
+  end process;
+  
+  -- next-state logic
+  ctr_is_full <= ctr_reg = DATA_WIDTH-1;
+  
+  ctr_next <= ctr_reg + 1 when bclk_reg = '1' and not ctr_is_full else
+              0 when bclk_reg = '1' and ctr_is_full else
+              ctr_reg;
+  bclk_next <= not bclk_reg;
+  lrc_next <= not lrc_reg when bclk_reg = '1' and ctr_is_full else lrc_reg;
+  
+  sipo_en <= '1' when bclk_reg = '1' and int_en = '1' else 
+             '0';
+  piso_en <= '1' when bclk_reg = '1' and int_en = '1' else 
+             '0';
+
+  piso_data <= i_data;
+  piso_load <= '1' when ctr_is_full and bclk_reg = '1' else 
+               '0';
+  
+  -- outputs
+  o_bclk <= bclk_reg;
+  o_lrc <= lrc_reg;
+  
+  o_data <= sipo_data;
+  o_valid <= '1' when ctr_is_full and bclk_reg = '1' else
+             '0';
+             
+             
+  o_ready <= '1' when ctr_is_full and bclk_reg = '1' else
+             '0';
+  
+end architecture;

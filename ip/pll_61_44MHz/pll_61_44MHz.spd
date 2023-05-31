@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="pll_61_44MHz_sim/pll_61_44MHz.vho" type="VHDL" />
+ <topLevel name="pll_61_44MHz" />
+ <deviceFamily name="cyclonev" />
+</simPackage>
