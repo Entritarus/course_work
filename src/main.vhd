@@ -32,7 +32,7 @@ entity main is
 end entity;
 
 architecture RTL of main is
-
+  constant SOUND_DATA_WIDTH : natural := 24;
   signal int_reset : sl;
   signal clk_i2c : sl;
   signal clk_ssm : sl;
@@ -40,8 +40,8 @@ architecture RTL of main is
   signal ssm_sda_out, ssm_sda_in, ssm_sda_oe: sl;
   signal ssm_scl_out, ssm_scl_in, ssm_scl_oe: sl;
 	
-  signal i_sound_data : slv(15 downto 0);
-  signal o_sound_data : slv(15 downto 0);
+  signal i_sound_data : slv(SOUND_DATA_WIDTH-1 downto 0);
+  signal o_sound_data : slv(SOUND_DATA_WIDTH-1 downto 0);
   signal enable_sound_io : sl;
   
   signal snd_test_bit : sl;
@@ -50,6 +50,7 @@ architecture RTL of main is
   
   signal lrc : sl;
   
+  signal i2c_success : sl;
 begin
   int_reset <= not i_rst;
 
@@ -78,12 +79,12 @@ begin
 		);
   
 	SSM2603_CONTROLLER: entity work.ssm2603_controller
-		port map (
+		port map ( 
 			clk => clk_i2c,
 			rst => int_reset,
 			
 			i_reconfig_req => enable_sound_io,
-			o_reconfig_success => o_success_led,
+			o_reconfig_success => i2c_success,
 			
 			io_scl  => io_scl,
       io_sda  => io_sda,
@@ -91,10 +92,13 @@ begin
 		);
 	
   SOUND_IO: entity work.sound_master
+    generic map (
+      DATA_WIDTH => SOUND_DATA_WIDTH
+	 )
     port map (
       clk => clk_sound_io,
       rst => int_reset,
-		i_enable => enable_sound_io,
+      i_enable => i2c_success,
 		
       i_data => i_sound_data, -- data to playback
       o_ready => open, --ready,
@@ -130,10 +134,12 @@ begin
   
   --i_sound_data <= (14 => snd_test_bit, others => '0'); -- sound test
   --i_sound_data <= (others => '0');
-  -- o_lrc_dac <= lrc;
-  -- o_lrc_adc <= lrc;
+  o_lrc_dac <= lrc;
+  o_lrc_adc <= lrc;
   --o_pbdat <= i_recdat;
   --o_lrc_dac <= i_lrc_adc;
   --o_mute <= '1';
   --o_pbdat <= '0';
+  
+  o_success_led <= i2c_success;
 end architecture;

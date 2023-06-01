@@ -30,13 +30,13 @@ architecture RTL of ssm2603_controller is
   constant CONFIG_DATA : cfg_dat_t(0 to CFG_LEN-1)(DATA_WIDTH*2 - 1 downto 0) := (
     0  => x"1E00", -- R15: initial chip reset
     1  => x"0C72", -- R6:  turn on whole chip, DAC, ADC, LINEIN
-    2  => x"000B", -- R0:  disable LRINBOTH (0), no LINMUTE (0), 0 dB left channel ADC volume --OK
-    3  => x"020B", -- R1:  disable LRINBOTH (0), no RINMUTE (0), 0 dB right channel ADC volume --OK
-    4  => x"0451", -- R2:  disable LRHPBOTH (0), -40 dB left channel DAC volume --OK
-    5  => x"0651", -- R3:  disable LRHPBOTH (0), -40 dB right channel DAC volume --OK
+    2  => x"0017", -- R0:  disable LRINBOTH (0), no LINMUTE (0), 0 dB left channel ADC volume --OK
+    3  => x"0217", -- R1:  disable LRINBOTH (0), no RINMUTE (0), 0 dB right channel ADC volume --OK
+    4  => x"0479", -- R2:  disable LRHPBOTH (0), -40 dB left channel DAC volume --OK
+    5  => x"0679", -- R3:  disable LRHPBOTH (0), -40 dB right channel DAC volume --OK
     6  => x"0812", -- R4:  select DAC, bypass disable, line in to ADC --OK
     7  => x"0A00", -- R5:  no DAC mute, no de-emphasis, no ADC HPF --OK
-    8  => x"0E02", -- R7:  BCLK not inverted, slave mode (master = 0x40), no LRSWAP, LRP normal, 16 bit, i2s --OK
+    8  => x"0E0A", -- R7:  BCLK not inverted, slave mode (master = 0x40), no LRSWAP, LRP normal, 16 bit, i2s --OK
     9  => x"1001", -- R8:  USB mode, fs = 48 kHz --OK
     10 => x"1201", -- R9:  activate digital core
     11 => x"0C62"  -- R6:  turn on output

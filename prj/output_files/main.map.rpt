@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Thu Jun  1 02:28:22 2023
+Thu Jun  1 23:33:27 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -45,10 +45,9 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
  37. Port Connectivity Checks: "ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER"
  38. Signal Tap Logic Analyzer Settings
  39. Post-Synthesis Netlist Statistics for Top Partition
- 40. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
- 41. Elapsed Time Per Partition
- 42. Connections to In-System Debugging Instance "auto_signaltap_0"
- 43. Analysis & Synthesis Messages
+ 40. Elapsed Time Per Partition
+ 41. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 42. Analysis & Synthesis Messages
 
 
 
@@ -75,13 +74,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun  1 02:28:22 2023       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun  1 23:33:27 2023       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1598                                        ;
+; Total registers                 ; 1607                                        ;
 ; Total pins                      ; 12                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 655,360                                     ;
@@ -298,16 +297,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 924               ;
+; Estimate of Logic utilization (ALMs needed) ; 929               ;
 ;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 622               ;
+; Combinational ALUT usage for logic          ; 619               ;
 ;     -- 7 input functions                    ; 2                 ;
-;     -- 6 input functions                    ; 176               ;
-;     -- 5 input functions                    ; 129               ;
-;     -- 4 input functions                    ; 51                ;
-;     -- <=3 input functions                  ; 264               ;
+;     -- 6 input functions                    ; 177               ;
+;     -- 5 input functions                    ; 131               ;
+;     -- 4 input functions                    ; 52                ;
+;     -- <=3 input functions                  ; 257               ;
 ;                                             ;                   ;
-; Dedicated logic registers                   ; 1598              ;
+; Dedicated logic registers                   ; 1607              ;
 ;                                             ;                   ;
 ; I/O pins                                    ; 12                ;
 ; Total MLAB memory bits                      ; 0                 ;
@@ -320,8 +319,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; i_clk_50MHz~input ;
 ; Maximum fan-out                             ; 843               ;
-; Total fan-out                               ; 10284             ;
-; Average fan-out                             ; 4.40              ;
+; Total fan-out                               ; 10350             ;
+; Average fan-out                             ; 4.42              ;
 +---------------------------------------------+-------------------+
 
 
@@ -330,7 +329,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                            ; Entity Name                                     ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+--------------+
-; |main                                                                                                                                   ; 622 (2)             ; 1598 (0)                  ; 655360            ; 0          ; 12   ; 0            ; |main                                                                                                                                                                                                                                                                                                                                                                                          ; main                                            ; work         ;
+; |main                                                                                                                                   ; 619 (1)             ; 1607 (0)                  ; 655360            ; 0          ; 12   ; 0            ; |main                                                                                                                                                                                                                                                                                                                                                                                          ; main                                            ; work         ;
 ;    |clock_divider_duty:CLK_DIVIDER_DUTY|                                                                                                ; 15 (15)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |main|clock_divider_duty:CLK_DIVIDER_DUTY                                                                                                                                                                                                                                                                                                                                                      ; clock_divider_duty                              ; work         ;
 ;    |pll_12MHz:CLK_PLL_SSM|                                                                                                              ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|pll_12MHz:CLK_PLL_SSM                                                                                                                                                                                                                                                                                                                                                                    ; pll_12MHz                                       ; pll_12mhz    ;
 ;       |pll_12MHz_0002:pll_12mhz_inst|                                                                                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|pll_12MHz:CLK_PLL_SSM|pll_12MHz_0002:pll_12mhz_inst                                                                                                                                                                                                                                                                                                                                      ; pll_12MHz_0002                                  ; pll_12MHz    ;
@@ -710,9 +709,9 @@ https://fpgasoftware.intel.com/eula.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 1 (1)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                                                                             ; lpm_shiftreg                                    ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 1 (1)               ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                                                                          ; lpm_shiftreg                                    ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 20 (20)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                                                                        ; sld_rom_sr                                      ; work         ;
-;    |sound_master:SOUND_IO|                                                                                                              ; 34 (30)             ; 58 (6)                    ; 0                 ; 0          ; 0    ; 0            ; |main|sound_master:SOUND_IO                                                                                                                                                                                                                                                                                                                                                                    ; sound_master                                    ; work         ;
-;       |clock_divider_pulse:CLK_DIV_PULSE|                                                                                               ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|sound_master:SOUND_IO|clock_divider_pulse:CLK_DIV_PULSE                                                                                                                                                                                                                                                                                                                                  ; clock_divider_pulse                             ; work         ;
-;       |piso_register:PISO|                                                                                                              ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |main|sound_master:SOUND_IO|piso_register:PISO                                                                                                                                                                                                                                                                                                                                                 ; piso_register                                   ; work         ;
+;    |sound_master:SOUND_IO|                                                                                                              ; 32 (27)             ; 67 (7)                    ; 0                 ; 0          ; 0    ; 0            ; |main|sound_master:SOUND_IO                                                                                                                                                                                                                                                                                                                                                                    ; sound_master                                    ; work         ;
+;       |clock_divider_pulse:CLK_DIV_PULSE|                                                                                               ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|sound_master:SOUND_IO|clock_divider_pulse:CLK_DIV_PULSE                                                                                                                                                                                                                                                                                                                                  ; clock_divider_pulse                             ; work         ;
+;       |piso_register:PISO|                                                                                                              ; 0 (0)               ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |main|sound_master:SOUND_IO|piso_register:PISO                                                                                                                                                                                                                                                                                                                                                 ; piso_register                                   ; work         ;
 ;       |sipo_register:SIPO|                                                                                                              ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |main|sound_master:SOUND_IO|sipo_register:SIPO                                                                                                                                                                                                                                                                                                                                                 ; sipo_register                                   ; work         ;
 ;    |ssm2603_controller:SSM2603_CONTROLLER|                                                                                              ; 55 (9)              ; 48 (7)                    ; 0                 ; 0          ; 0    ; 0            ; |main|ssm2603_controller:SSM2603_CONTROLLER                                                                                                                                                                                                                                                                                                                                                    ; ssm2603_controller                              ; work         ;
 ;       |i2c_master:I2C_MASTER|                                                                                                           ; 46 (22)             ; 41 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER                                                                                                                                                                                                                                                                                                                              ; i2c_master                                      ; edi          ;
@@ -812,12 +811,12 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------+----------------------------------------+
 ; Register name                                                                                         ; Reason for Removal                     ;
 +-------------------------------------------------------------------------------------------------------+----------------------------------------+
-; sound_master:SOUND_IO|piso_register:PISO|data_reg[0..15]                                              ; Stuck at GND due to stuck port data_in ;
+; sound_master:SOUND_IO|piso_register:PISO|data_reg[0..7]                                               ; Stuck at GND due to stuck port data_in ;
 ; ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_BADDR|data_reg[0]   ; Stuck at GND due to stuck port data_in ;
 ; ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR|data_reg[0,1] ; Stuck at GND due to stuck port data_in ;
 ; startup_timer:STARTUP_TIMER|state_reg.s_idle                                                          ; Lost fanout                            ;
 ; ssm2603_controller:SSM2603_CONTROLLER|state_reg.s_error                                               ; Lost fanout                            ;
-; Total Number of Removed Registers = 21                                                                ;                                        ;
+; Total Number of Removed Registers = 13                                                                ;                                        ;
 +-------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -832,15 +831,7 @@ Encoding Type:  One-Hot
 ;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[4],                                               ;
 ;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[5],                                               ;
 ;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[6],                                               ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[7],                                               ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[8],                                               ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[9],                                               ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[10],                                              ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[11],                                              ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[12],                                              ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[13],                                              ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[14],                                              ;
-;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[15]                                               ;
+;                                                                                                     ;                           ; sound_master:SOUND_IO|piso_register:PISO|data_reg[7]                                                ;
 ; ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR|data_reg[0] ; Stuck at GND              ; ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR|data_reg[1] ;
 ;                                                                                                     ; due to stuck port data_in ;                                                                                                     ;
 +-----------------------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------+
@@ -851,12 +842,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1598  ;
+; Total registers                              ; 1607  ;
 ; Number of registers using Synchronous Clear  ; 157   ;
-; Number of registers using Synchronous Load   ; 242   ;
-; Number of registers using Asynchronous Clear ; 740   ;
+; Number of registers using Synchronous Load   ; 250   ;
+; Number of registers using Asynchronous Clear ; 749   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 786   ;
+; Number of registers using Clock Enable       ; 794   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -866,11 +857,6 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; sound_master:SOUND_IO|ctr_reg[0]                                                                                                                                                                                                                                                                                                ; 7       ;
-; sound_master:SOUND_IO|ctr_reg[1]                                                                                                                                                                                                                                                                                                ; 6       ;
-; sound_master:SOUND_IO|ctr_reg[2]                                                                                                                                                                                                                                                                                                ; 5       ;
-; sound_master:SOUND_IO|ctr_reg[3]                                                                                                                                                                                                                                                                                                ; 4       ;
-; sound_master:SOUND_IO|ctr_reg[4]                                                                                                                                                                                                                                                                                                ; 3       ;
 ; ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|counter_reg[2]                                                                                                                                                                                                                                                      ; 4       ;
 ; ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|counter_reg[1]                                                                                                                                                                                                                                                      ; 5       ;
 ; ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|counter_reg[0]                                                                                                                                                                                                                                                      ; 6       ;
@@ -890,34 +876,27 @@ Encoding Type:  One-Hot
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3]                                                                                                                                                   ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4]                                                                                                                                                   ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5]                                                                                                                                                   ; 1       ;
-; Total number of inverted registers = 24                                                                                                                                                                                                                                                                                         ;         ;
+; Total number of inverted registers = 19                                                                                                                                                                                                                                                                                         ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_WDATA|data_reg[7]                                                                                                                                                                                                                                                      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_BADDR|data_reg[7]                                                                                                                                                                                                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR|data_reg[4]                                                                                                                                                                                                                                                      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR|data_reg[7]                                                                                                                                                                                                                                                      ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 28 LEs               ; 8 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_WDATA|data_reg[5]                                                                                                                                                                                                                                                      ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_BADDR|data_reg[3]                                                                                                                                                                                                                                                      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|sound_master:SOUND_IO|ctr_reg[3]                                                                                                                                                                                                                                                                                                                         ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|counter_reg[2]                                                                                                                                                                                                                                                                               ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|state_next                                                                                                                                                                                                                                                                                   ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |main|ssm2603_controller:SSM2603_CONTROLLER|Selector3                                                                                                                                                                                                                                                                                                          ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|Selector11                                                                                                                                                                                                                                                                                   ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[1]                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[0]                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[1]                    ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[2]              ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[0] ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]                      ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |main|sound_master:SOUND_IO|piso_register:PISO|data_reg[26]                                               ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|sound_master:SOUND_IO|ctr_reg[0]                                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_BADDR|data_reg[7] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR|data_reg[5] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR|data_reg[7] ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 35 LEs               ; 10 LEs                 ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_WDATA|data_reg[6] ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_BADDR|data_reg[4] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|counter_reg[0]                          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|state_next                              ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |main|ssm2603_controller:SSM2603_CONTROLLER|Selector2                                                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |main|ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|Selector11                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -1480,7 +1459,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------+
 ; Parameter Name ; Value ; Type                                      ;
 +----------------+-------+-------------------------------------------+
-; data_width     ; 16    ; Signed Integer                            ;
+; data_width     ; 24    ; Signed Integer                            ;
 +----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1600,24 +1579,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+-------+----------+----------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sound_master:SOUND_IO|sipo_register:SIPO"                                                    ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; i_srst        ; Input  ; Info     ; Stuck at GND                                                                        ;
-; o_data[15..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sound_master:SOUND_IO|sipo_register:SIPO"                                                   ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_srst       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o_data[6..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_data[31]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------+
 ; Port Connectivity Checks: "sound_master:SOUND_IO|piso_register:PISO" ;
-+---------------+-------+----------+-----------------------------------+
-; Port          ; Type  ; Severity ; Details                           ;
-+---------------+-------+----------+-----------------------------------+
-; i_data[15..0] ; Input ; Info     ; Stuck at GND                      ;
-; i_srst        ; Input ; Info     ; Stuck at GND                      ;
-+---------------+-------+----------+-----------------------------------+
++--------------+-------+----------+------------------------------------+
+; Port         ; Type  ; Severity ; Details                            ;
++--------------+-------+----------+------------------------------------+
+; i_data[7..0] ; Input ; Info     ; Stuck at GND                       ;
+; i_srst       ; Input ; Info     ; Stuck at GND                       ;
++--------------+-------+----------+------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -1627,7 +1607,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; o_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; o_valid ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o_lrc   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -1645,7 +1624,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; i_baddr[7..5] ; Input ; Info     ; Stuck at GND                                         ;
 ; i_baddr[0]    ; Input ; Info     ; Stuck at GND                                         ;
 ; i_data[7]     ; Input ; Info     ; Stuck at GND                                         ;
-; i_data[2]     ; Input ; Info     ; Stuck at GND                                         ;
 +---------------+-------+----------+------------------------------------------------------+
 
 
@@ -1663,71 +1641,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 140                         ;
-;     CLR               ; 36                          ;
+; arriav_ff             ; 149                         ;
+;     CLR               ; 37                          ;
 ;     ENA CLR           ; 63                          ;
 ;     ENA CLR SCLR      ; 26                          ;
-;     ENA CLR SLD       ; 15                          ;
+;     ENA CLR SLD       ; 23                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 137                         ;
+; arriav_lcell_comb     ; 134                         ;
 ;     arith             ; 32                          ;
 ;         1 data inputs ; 32                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 104                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 31                          ;
+;     normal            ; 101                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 30                          ;
 ;         3 data inputs ; 11                          ;
-;         4 data inputs ; 12                          ;
-;         5 data inputs ; 22                          ;
-;         6 data inputs ; 19                          ;
+;         4 data inputs ; 13                          ;
+;         5 data inputs ; 24                          ;
+;         6 data inputs ; 20                          ;
 ; boundary_port         ; 84                          ;
 ; generic_pll           ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 1.71                        ;
+; Average LUT depth     ; 1.69                        ;
 +-----------------------+-----------------------------+
 
 
-+------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
-+-----------------------+------------------------------------------+
-; Type                  ; Count                                    ;
-+-----------------------+------------------------------------------+
-; arriav_ff             ; 90                                       ;
-;     CLR               ; 5                                        ;
-;     ENA               ; 30                                       ;
-;     ENA CLR           ; 22                                       ;
-;     ENA CLR SLD       ; 10                                       ;
-;     SCLR              ; 7                                        ;
-;     plain             ; 16                                       ;
-; arriav_lcell_comb     ; 91                                       ;
-;     extend            ; 1                                        ;
-;         7 data inputs ; 1                                        ;
-;     normal            ; 90                                       ;
-;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 4                                        ;
-;         2 data inputs ; 20                                       ;
-;         3 data inputs ; 14                                       ;
-;         4 data inputs ; 15                                       ;
-;         5 data inputs ; 24                                       ;
-;         6 data inputs ; 12                                       ;
-; boundary_port         ; 107                                      ;
-;                       ;                                          ;
-; Max LUT depth         ; 3.00                                     ;
-; Average LUT depth     ; 1.33                                     ;
-+-----------------------+------------------------------------------+
-
-
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; Top              ; 00:00:00     ;
-; sld_hub:auto_hub ; 00:00:00     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1739,22 +1685,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; i_recdat                                              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; i_recdat                                              ; N/A                                                                                                                                                            ;
 ; o_bclk                                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|bclk_reg                        ; N/A                                                                                                                                                            ;
 ; o_bclk                                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|bclk_reg                        ; N/A                                                                                                                                                            ;
-; o_lrc_adc                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                  ; N/A                                                                                                                                                            ;
-; o_lrc_adc                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                  ; N/A                                                                                                                                                            ;
-; o_lrc_dac                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                  ; N/A                                                                                                                                                            ;
-; o_lrc_dac                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                  ; N/A                                                                                                                                                            ;
+; o_lrc_adc                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|lrc_reg                         ; N/A                                                                                                                                                            ;
+; o_lrc_adc                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|lrc_reg                         ; N/A                                                                                                                                                            ;
+; o_lrc_dac                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|lrc_reg                         ; N/A                                                                                                                                                            ;
+; o_lrc_dac                                             ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|lrc_reg                         ; N/A                                                                                                                                                            ;
 ; o_pbdat                                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_register:PISO|data_reg[31] ; N/A                                                                                                                                                            ;
 ; o_pbdat                                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_register:PISO|data_reg[31] ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[0]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[0]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[0]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[0]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[1]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[1]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[1]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[1]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[2]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[2]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[2]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[2]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[3]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[3]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[3]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[3]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[4]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[4]~_wirecell            ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|ctr_reg[4]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[4]~_wirecell            ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[0]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[0]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[0]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[0]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[1]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[1]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[1]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[1]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[2]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[2]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[2]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[2]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[3]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[3]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[3]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[3]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[4]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[4]                      ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|ctr_reg[4]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|ctr_reg[4]                      ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|i_data[0]                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_data[0]~0                     ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|i_data[0]                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_data[0]~0                     ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|i_data[10]                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_data[10]~1                    ; N/A                                                                                                                                                            ;
@@ -1819,14 +1765,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; sound_master:SOUND_IO|o_data[8]                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_data[8]~14                    ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|o_data[9]                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_data[9]~15                    ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|o_data[9]                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_data[9]~15                    ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|o_ready                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_load                       ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|o_ready                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_load                       ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|o_valid                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_load                       ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|o_valid                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_load                       ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|o_ready                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_valid                         ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|o_ready                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_valid                         ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|o_valid                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_valid                         ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|o_valid                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_valid                         ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|piso_en                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|sipo_en                         ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|piso_en                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|sipo_en                         ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|piso_load                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_load                       ; N/A                                                                                                                                                            ;
-; sound_master:SOUND_IO|piso_load                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_load                       ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|piso_load                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_valid                         ; N/A                                                                                                                                                            ;
+; sound_master:SOUND_IO|piso_load                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|o_valid                         ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|piso_register:PISO|data_reg[18] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_register:PISO|data_reg[18] ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|piso_register:PISO|data_reg[18] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_register:PISO|data_reg[18] ; N/A                                                                                                                                                            ;
 ; sound_master:SOUND_IO|piso_register:PISO|data_reg[19] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sound_master:SOUND_IO|piso_register:PISO|data_reg[19] ; N/A                                                                                                                                                            ;
@@ -1937,7 +1883,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Jun  1 02:28:06 2023
+    Info: Processing started: Thu Jun  1 23:33:04 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fir_filter -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20032): Parallel compilation is enabled and will use up to 12 processors
@@ -2006,14 +1952,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file /course
 Info (12021): Found 1 design units, including 1 entities, in source file /course_work/ip/pll_61_44mhz/pll_61_44mhz/pll_61_44mhz_0002.v
     Info (12023): Found entity 1: pll_61_44MHz_0002 File: C:/course_work/ip/pll_61_44MHz/pll_61_44MHz/pll_61_44MHz_0002.v Line: 2
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at main.vhd(28): used implicit default value for signal "o_lrc_dac" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/course_work/src/main.vhd Line: 28
-Warning (10541): VHDL Signal Declaration warning at main.vhd(29): used implicit default value for signal "o_lrc_adc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/course_work/src/main.vhd Line: 29
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(47): object "snd_test_bit" assigned a value but never read File: C:/course_work/src/main.vhd Line: 47
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(51): object "lrc" assigned a value but never read File: C:/course_work/src/main.vhd Line: 51
-Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:CLK_DIVIDER_DUTY" File: C:/course_work/src/main.vhd Line: 56
+Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:CLK_DIVIDER_DUTY" File: C:/course_work/src/main.vhd Line: 57
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(28): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 28
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(34): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 34
-Info (12128): Elaborating entity "pll_12MHz" for hierarchy "pll_12MHz:CLK_PLL_SSM" File: C:/course_work/src/main.vhd Line: 66
+Info (12128): Elaborating entity "pll_12MHz" for hierarchy "pll_12MHz:CLK_PLL_SSM" File: C:/course_work/src/main.vhd Line: 67
 Info (12128): Elaborating entity "pll_12MHz_0002" for hierarchy "pll_12MHz:CLK_PLL_SSM|pll_12MHz_0002:pll_12mhz_inst" File: C:/course_work/ip/pll_12MHz/pll_12MHz.vhd Line: 31
 Info (12128): Elaborating entity "altera_pll" for hierarchy "pll_12MHz:CLK_PLL_SSM|pll_12MHz_0002:pll_12mhz_inst|altera_pll:altera_pll_i" File: C:/course_work/ip/pll_12MHz/pll_12MHz/pll_12MHz_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
@@ -2079,7 +2022,7 @@ Info (12133): Instantiated megafunction "pll_12MHz:CLK_PLL_SSM|pll_12MHz_0002:pl
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "pll_61_44MHz" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO" File: C:/course_work/src/main.vhd Line: 73
+Info (12128): Elaborating entity "pll_61_44MHz" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO" File: C:/course_work/src/main.vhd Line: 74
 Info (12128): Elaborating entity "pll_61_44MHz_0002" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO|pll_61_44MHz_0002:pll_61_44mhz_inst" File: C:/course_work/ip/pll_61_44MHz/pll_61_44MHz.vhd Line: 31
 Info (12128): Elaborating entity "altera_pll" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO|pll_61_44MHz_0002:pll_61_44mhz_inst|altera_pll:altera_pll_i" File: C:/course_work/ip/pll_61_44MHz/pll_61_44MHz/pll_61_44MHz_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
@@ -2145,13 +2088,13 @@ Info (12133): Instantiated megafunction "pll_61_44MHz:CLK_PLL_SOUND_IO|pll_61_44
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "ssm2603_controller" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER" File: C:/course_work/src/main.vhd Line: 80
+Info (12128): Elaborating entity "ssm2603_controller" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER" File: C:/course_work/src/main.vhd Line: 81
 Warning (10492): VHDL Process Statement warning at ssm2603_controller.vhd(95): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/ssm2603_controller.vhd Line: 95
 Warning (10492): VHDL Process Statement warning at ssm2603_controller.vhd(103): signal "state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/ssm2603_controller.vhd Line: 103
 Warning (10492): VHDL Process Statement warning at ssm2603_controller.vhd(104): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/ssm2603_controller.vhd Line: 104
 Info (12128): Elaborating entity "i2c_master" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER" File: C:/course_work/src/ssm2603_controller.vhd Line: 65
 Info (12128): Elaborating entity "serializer" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR" File: C:/course_work/libs/edi/components/i2c_master/src/i2c_master.vhd Line: 84
-Info (12128): Elaborating entity "sound_master" for hierarchy "sound_master:SOUND_IO" File: C:/course_work/src/main.vhd Line: 93
+Info (12128): Elaborating entity "sound_master" for hierarchy "sound_master:SOUND_IO" File: C:/course_work/src/main.vhd Line: 94
 Warning (10492): VHDL Process Statement warning at sound_master.vhd(89): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/sound_master.vhd Line: 89
 Info (12128): Elaborating entity "piso_register" for hierarchy "sound_master:SOUND_IO|piso_register:PISO" File: C:/course_work/src/sound_master.vhd Line: 55
 Warning (10492): VHDL Process Statement warning at piso_register.vhd(28): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/libs/rtu/components/piso_register/src/piso_register.vhd Line: 28
@@ -2160,7 +2103,7 @@ Warning (10492): VHDL Process Statement warning at sipo_register.vhd(27): signal
 Info (12128): Elaborating entity "clock_divider_pulse" for hierarchy "sound_master:SOUND_IO|clock_divider_pulse:CLK_DIV_PULSE" File: C:/course_work/src/sound_master.vhd Line: 76
 Warning (10492): VHDL Process Statement warning at clock_divider_pulse.vhd(27): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_pulse.vhd Line: 27
 Warning (10492): VHDL Process Statement warning at clock_divider_pulse.vhd(33): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_pulse.vhd Line: 33
-Info (12128): Elaborating entity "startup_timer" for hierarchy "startup_timer:STARTUP_TIMER" File: C:/course_work/src/main.vhd Line: 111
+Info (12128): Elaborating entity "startup_timer" for hierarchy "startup_timer:STARTUP_TIMER" File: C:/course_work/src/main.vhd Line: 115
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(30): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 30
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(38): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 38
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(39): signal "state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 39
@@ -2170,7 +2113,7 @@ Warning (10492): VHDL Process Statement warning at startup_timer.vhd(50): signal
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(52): signal "i_start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 52
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(56): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 56
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(61): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 61
-Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:SOUND_TEST" File: C:/course_work/src/main.vhd Line: 120
+Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:SOUND_TEST" File: C:/course_work/src/main.vhd Line: 124
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(28): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 28
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(34): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file db/sld_ela_trigger_muo.tdf
@@ -2199,7 +2142,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: C:/course_work/prj/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2023.06.01.02:28:16 Progress: Loading sldb2886bd5/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2023.06.01.23:33:21 Progress: Loading sldb2886bd5/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2224,28 +2167,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/course_work/prj/db/ip/sldb2886bd5/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "ssm2603_controller:SSM2603_CONTROLLER|io_scl~synth" File: C:/course_work/src/ssm2603_controller.vhd Line: 17
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "o_lrc_dac" is stuck at GND File: C:/course_work/src/main.vhd Line: 28
-    Warning (13410): Pin "o_lrc_adc" is stuck at GND File: C:/course_work/src/main.vhd Line: 29
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register sound_master:SOUND_IO|lrc_reg will power up to Low File: C:/course_work/src/sound_master.vhd Line: 94
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Warning (20013): Ignored 13 assignments for entity "pll_34_56MHz" -- entity does not exist in design
 Warning (20013): Ignored 317 assignments for entity "pll_34_56MHz_0002" -- entity does not exist in design
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 191 of its 193 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 2 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 17 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2052 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2057 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 8 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1953 logic cells
+    Info (21061): Implemented 1958 logic cells
     Info (21064): Implemented 80 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4966 megabytes
-    Info: Processing ended: Thu Jun  1 02:28:22 2023
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:37
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4987 megabytes
+    Info: Processing ended: Thu Jun  1 23:33:27 2023
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:36
 
 

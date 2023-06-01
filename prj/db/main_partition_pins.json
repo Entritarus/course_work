@@ -20,6 +20,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_lrc_dac",
+					"strict" : false
+				},
+				{
+					"name" : "o_lrc_adc",
+					"strict" : false
+				},
+				{
 					"name" : "io_sda",
 					"strict" : false
 				},

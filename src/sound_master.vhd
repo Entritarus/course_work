@@ -8,7 +8,7 @@ use edi.data_types.all;
 
 entity sound_master is
   generic (
-    DATA_WIDTH : natural := 16
+    DATA_WIDTH : natural := 24
   );
   port(
     clk : in sl; -- FCLK = 2*DATA_WIDTH*48 kHz
@@ -26,7 +26,7 @@ entity sound_master is
     o_pbdat : out sl; --
     i_recdat : in sl; --
     o_lrc : out sl --
-  );
+  ); 
 end entity; 
 
 architecture RTL of sound_master is
@@ -41,7 +41,7 @@ architecture RTL of sound_master is
   signal sipo_data : slv(FRAME_WIDTH-1 downto 0) := (others => '0');
   signal sipo_en : sl := '0';
   
-  signal ctr_reg, ctr_next : unsigned(log2c(FRAME_WIDTH)-1 downto 0) := to_unsigned(FRAME_WIDTH-1, log2c(FRAME_WIDTH));
+  signal ctr_reg, ctr_next : unsigned(log2c(FRAME_WIDTH)-1 downto 0) := (others => '0');--to_unsigned(FRAME_WIDTH-1, log2c(FRAME_WIDTH));
   
   signal bclk_reg, bclk_next : sl := '0';
   signal lrc_reg, lrc_next   : sl := '1';
@@ -87,7 +87,7 @@ begin
   process(clk) is
   begin
     if rst = '1' then
-      ctr_reg <= to_unsigned(FRAME_WIDTH-1, log2c(FRAME_WIDTH));
+      ctr_reg <= (others => '0');--to_unsigned(FRAME_WIDTH-1, log2c(FRAME_WIDTH)); --to_unsigned(FRAME_WIDTH-1, log2c(FRAME_WIDTH));
       bclk_reg <= '0';
       lrc_reg <= '0';
     else
@@ -123,21 +123,21 @@ begin
 				 
   piso_data <= i_data & (FRAME_WIDTH-DATA_WIDTH-1 downto 0 => '0');
 
-  piso_load <= '1' when ctr_is_full and bclk_reg = '1' else 
+  piso_load <= '1' when ctr_reg = 0 and bclk_reg = '1' else 
                '0';
   
-  out_data_valid <= '1' when ctr_is_full and bclk_reg = '1' else
+  out_data_valid <= '1' when ctr_reg = 0 and bclk_reg = '1' else
                     '0';
-  in_ready <= '1' when ctr_is_full and bclk_reg = '1' else
+  in_ready <= '1' when ctr_reg = 0 and bclk_reg = '1' else
                    '0'; 
                    
   -- shift_reg_rst <= '1' when ctr_reg = 0 and bclk_reg = '0' and int_en = '1' else
-                   -- '0';
+                   -- '0'; 
   -- outputs
   o_bclk <= bclk_reg;
   o_lrc <= lrc_reg;
   
-  o_data <= sipo_data(FRAME_WIDTH-1 downto DATA_WIDTH) when out_data_valid else (others => '0');
+  o_data <= sipo_data(FRAME_WIDTH-2 downto FRAME_WIDTH-DATA_WIDTH-1) when out_data_valid else (others => '0');
   --o_data <= sipo_data when out_data_valid else (others => '0');
   
   o_valid <= out_data_valid;
