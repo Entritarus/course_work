@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Thu Jun  1 23:33:27 2023
+Sun Jun  4 19:28:49 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun  1 23:33:27 2023       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun  4 19:28:49 2023       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
@@ -1883,7 +1883,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Jun  1 23:33:04 2023
+    Info: Processing started: Sun Jun  4 19:28:33 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fir_filter -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20032): Parallel compilation is enabled and will use up to 12 processors
@@ -1936,8 +1936,8 @@ Info (12021): Found 2 design units, including 0 entities, in source file /course
     Info (12022): Found design unit 1: data_types (edi) File: C:/course_work/libs/edi/pkg/data_types.vhd Line: 8
     Info (12022): Found design unit 2: data_types-body File: C:/course_work/libs/edi/pkg/data_types.vhd Line: 62
 Info (12021): Found 2 design units, including 1 entities, in source file /course_work/src/main.vhd
-    Info (12022): Found design unit 1: main-RTL File: C:/course_work/src/main.vhd Line: 34
-    Info (12023): Found entity 1: main File: C:/course_work/src/main.vhd Line: 11
+    Info (12022): Found design unit 1: main-RTL File: C:/course_work/src/main.vhd Line: 36
+    Info (12023): Found entity 1: main File: C:/course_work/src/main.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file /course_work/src/clock_divider_duty.vhd
     Info (12022): Found design unit 1: clock_divider_duty-RTL File: C:/course_work/src/clock_divider_duty.vhd Line: 20
     Info (12023): Found entity 1: clock_divider_duty File: C:/course_work/src/clock_divider_duty.vhd Line: 8
@@ -1952,11 +1952,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file /course
 Info (12021): Found 1 design units, including 1 entities, in source file /course_work/ip/pll_61_44mhz/pll_61_44mhz/pll_61_44mhz_0002.v
     Info (12023): Found entity 1: pll_61_44MHz_0002 File: C:/course_work/ip/pll_61_44MHz/pll_61_44MHz/pll_61_44MHz_0002.v Line: 2
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(47): object "snd_test_bit" assigned a value but never read File: C:/course_work/src/main.vhd Line: 47
-Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:CLK_DIVIDER_DUTY" File: C:/course_work/src/main.vhd Line: 57
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(49): object "snd_test_bit" assigned a value but never read File: C:/course_work/src/main.vhd Line: 49
+Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:CLK_DIVIDER_DUTY" File: C:/course_work/src/main.vhd Line: 59
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(28): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 28
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(34): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 34
-Info (12128): Elaborating entity "pll_12MHz" for hierarchy "pll_12MHz:CLK_PLL_SSM" File: C:/course_work/src/main.vhd Line: 67
+Info (12128): Elaborating entity "pll_12MHz" for hierarchy "pll_12MHz:CLK_PLL_SSM" File: C:/course_work/src/main.vhd Line: 69
 Info (12128): Elaborating entity "pll_12MHz_0002" for hierarchy "pll_12MHz:CLK_PLL_SSM|pll_12MHz_0002:pll_12mhz_inst" File: C:/course_work/ip/pll_12MHz/pll_12MHz.vhd Line: 31
 Info (12128): Elaborating entity "altera_pll" for hierarchy "pll_12MHz:CLK_PLL_SSM|pll_12MHz_0002:pll_12mhz_inst|altera_pll:altera_pll_i" File: C:/course_work/ip/pll_12MHz/pll_12MHz/pll_12MHz_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
@@ -2022,7 +2022,7 @@ Info (12133): Instantiated megafunction "pll_12MHz:CLK_PLL_SSM|pll_12MHz_0002:pl
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "pll_61_44MHz" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO" File: C:/course_work/src/main.vhd Line: 74
+Info (12128): Elaborating entity "pll_61_44MHz" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO" File: C:/course_work/src/main.vhd Line: 76
 Info (12128): Elaborating entity "pll_61_44MHz_0002" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO|pll_61_44MHz_0002:pll_61_44mhz_inst" File: C:/course_work/ip/pll_61_44MHz/pll_61_44MHz.vhd Line: 31
 Info (12128): Elaborating entity "altera_pll" for hierarchy "pll_61_44MHz:CLK_PLL_SOUND_IO|pll_61_44MHz_0002:pll_61_44mhz_inst|altera_pll:altera_pll_i" File: C:/course_work/ip/pll_61_44MHz/pll_61_44MHz/pll_61_44MHz_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
@@ -2088,13 +2088,13 @@ Info (12133): Instantiated megafunction "pll_61_44MHz:CLK_PLL_SOUND_IO|pll_61_44
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "ssm2603_controller" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER" File: C:/course_work/src/main.vhd Line: 81
+Info (12128): Elaborating entity "ssm2603_controller" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER" File: C:/course_work/src/main.vhd Line: 83
 Warning (10492): VHDL Process Statement warning at ssm2603_controller.vhd(95): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/ssm2603_controller.vhd Line: 95
 Warning (10492): VHDL Process Statement warning at ssm2603_controller.vhd(103): signal "state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/ssm2603_controller.vhd Line: 103
 Warning (10492): VHDL Process Statement warning at ssm2603_controller.vhd(104): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/ssm2603_controller.vhd Line: 104
 Info (12128): Elaborating entity "i2c_master" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER" File: C:/course_work/src/ssm2603_controller.vhd Line: 65
 Info (12128): Elaborating entity "serializer" for hierarchy "ssm2603_controller:SSM2603_CONTROLLER|i2c_master:I2C_MASTER|serializer:SERIALIZER_SADDR" File: C:/course_work/libs/edi/components/i2c_master/src/i2c_master.vhd Line: 84
-Info (12128): Elaborating entity "sound_master" for hierarchy "sound_master:SOUND_IO" File: C:/course_work/src/main.vhd Line: 94
+Info (12128): Elaborating entity "sound_master" for hierarchy "sound_master:SOUND_IO" File: C:/course_work/src/main.vhd Line: 96
 Warning (10492): VHDL Process Statement warning at sound_master.vhd(89): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/sound_master.vhd Line: 89
 Info (12128): Elaborating entity "piso_register" for hierarchy "sound_master:SOUND_IO|piso_register:PISO" File: C:/course_work/src/sound_master.vhd Line: 55
 Warning (10492): VHDL Process Statement warning at piso_register.vhd(28): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/libs/rtu/components/piso_register/src/piso_register.vhd Line: 28
@@ -2103,7 +2103,7 @@ Warning (10492): VHDL Process Statement warning at sipo_register.vhd(27): signal
 Info (12128): Elaborating entity "clock_divider_pulse" for hierarchy "sound_master:SOUND_IO|clock_divider_pulse:CLK_DIV_PULSE" File: C:/course_work/src/sound_master.vhd Line: 76
 Warning (10492): VHDL Process Statement warning at clock_divider_pulse.vhd(27): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_pulse.vhd Line: 27
 Warning (10492): VHDL Process Statement warning at clock_divider_pulse.vhd(33): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_pulse.vhd Line: 33
-Info (12128): Elaborating entity "startup_timer" for hierarchy "startup_timer:STARTUP_TIMER" File: C:/course_work/src/main.vhd Line: 115
+Info (12128): Elaborating entity "startup_timer" for hierarchy "startup_timer:STARTUP_TIMER" File: C:/course_work/src/main.vhd Line: 117
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(30): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 30
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(38): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 38
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(39): signal "state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 39
@@ -2113,7 +2113,7 @@ Warning (10492): VHDL Process Statement warning at startup_timer.vhd(50): signal
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(52): signal "i_start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 52
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(56): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 56
 Warning (10492): VHDL Process Statement warning at startup_timer.vhd(61): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/startup_timer.vhd Line: 61
-Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:SOUND_TEST" File: C:/course_work/src/main.vhd Line: 124
+Info (12128): Elaborating entity "clock_divider_duty" for hierarchy "clock_divider_duty:SOUND_TEST" File: C:/course_work/src/main.vhd Line: 126
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(28): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 28
 Warning (10492): VHDL Process Statement warning at clock_divider_duty.vhd(34): signal "ctr_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/course_work/src/clock_divider_duty.vhd Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file db/sld_ela_trigger_muo.tdf
@@ -2142,7 +2142,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: C:/course_work/prj/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2023.06.01.23:33:21 Progress: Loading sldb2886bd5/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2023.06.04.19:28:43 Progress: Loading sldb2886bd5/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2185,8 +2185,8 @@ Info (21057): Implemented 2057 device resources after synthesis - the final reso
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
     Info: Peak virtual memory: 4987 megabytes
-    Info: Processing ended: Thu Jun  1 23:33:27 2023
-    Info: Elapsed time: 00:00:23
+    Info: Processing ended: Sun Jun  4 19:28:49 2023
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:36
 
 

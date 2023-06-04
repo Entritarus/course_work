@@ -5,6 +5,8 @@ library pll_12MHz;
 library pll_61_44MHz;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+--use ieee.fixed_pkg.all;
+--use ieee.fixed_float_types.all;
 use edi.functions.all;
 use edi.data_types.all;
 
@@ -131,6 +133,33 @@ begin
 			clk_in => i_clk_50MHz,
 			clk_out => snd_test_bit
 		);
+  
+  -- SAMPLE_MEM: entity work.sample_memory
+    -- port map (
+      -- clk       => open,
+      -- rst       => open,
+      
+      -- i_wreq    => open,
+      -- i_wdata   => open,
+      
+      -- i_rreq    => open,
+      -- i_raddr   => open,
+      -- o_rdata   => open,
+      -- o_rvalid  => open
+    -- );
+  -- FIR_MEM: entity work.fir_memory
+    -- port map (
+      -- clk       => open,
+      
+      -- i_wreq    => open,
+      -- i_waddr   => open,
+      -- i_wdata   => open,
+      
+      -- i_rreq    => open,
+      -- i_raddr   => open,
+      -- o_rdata   => open,
+      -- o_rvalid  => open
+    -- );
   
   --i_sound_data <= (14 => snd_test_bit, others => '0'); -- sound test
   --i_sound_data <= (others => '0');

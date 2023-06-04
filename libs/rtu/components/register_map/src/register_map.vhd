@@ -60,15 +60,17 @@ begin
   -- next-state logic
   -- <your code goes here>
   
-  -- Input DEMUX
 	IN_DEMUX: for i in 0 to REGISTER_COUNT-1 generate
 		regmap_en(i) <= i_wreq when to_integer(unsigned(i_waddr)) = i else '0';
 	end generate;
 	
-	-- Output MUX
+	
 	rdata_next <= regmap_reg(to_integer(unsigned(i_raddr)));
 	
-	regmap_next <= (others => i_wdata);
+  OUT_MUX: for i in 0 to REGISTER_COUNT-1 generate
+    regmap_next(i) <= i_wdata;
+  end generate;
+	
 	
 	rvalid_next <= i_rreq;
   -- outputs

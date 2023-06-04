@@ -137,6 +137,7 @@ begin
   o_bclk <= bclk_reg;
   o_lrc <= lrc_reg;
   
+  -- i know this is not how it is supposed to work, but it works
   o_data <= sipo_data(FRAME_WIDTH-2 downto FRAME_WIDTH-DATA_WIDTH-1) when out_data_valid else (others => '0');
   --o_data <= sipo_data when out_data_valid else (others => '0');
   

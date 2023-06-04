@@ -1,5 +1,5 @@
 Fitter report for main
-Thu Jun  1 23:34:11 2023
+Sun Jun  4 19:29:32 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Thu Jun  1 23:34:11 2023       ;
+; Fitter Status                   ; Successful - Sun Jun  4 19:29:32 2023       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
@@ -158,22 +158,22 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.25        ;
+; Average used               ; 1.28        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.1%      ;
-;     Processor 3            ;   2.9%      ;
-;     Processor 4            ;   2.9%      ;
-;     Processor 5            ;   2.1%      ;
-;     Processor 6            ;   2.1%      ;
-;     Processor 7            ;   2.1%      ;
-;     Processor 8            ;   2.1%      ;
-;     Processor 9            ;   2.0%      ;
-;     Processor 10           ;   2.0%      ;
-;     Processor 11           ;   2.0%      ;
-;     Processor 12           ;   2.0%      ;
+;     Processor 2            ;   3.4%      ;
+;     Processor 3            ;   3.2%      ;
+;     Processor 4            ;   3.1%      ;
+;     Processor 5            ;   2.3%      ;
+;     Processor 6            ;   2.3%      ;
+;     Processor 7            ;   2.3%      ;
+;     Processor 8            ;   2.3%      ;
+;     Processor 9            ;   2.3%      ;
+;     Processor 10           ;   2.3%      ;
+;     Processor 11           ;   2.3%      ;
+;     Processor 12           ;   2.3%      ;
 +----------------------------+-------------+
 
 
@@ -2434,6 +2434,8 @@ Note: This table only shows the top 100 path(s) that have the largest delay adde
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
+Warning (20013): Ignored 13 assignments for entity "pll_34_56MHz" -- entity does not exist in design
+Warning (20013): Ignored 317 assignments for entity "pll_34_56MHz_0002" -- entity does not exist in design
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20032): Parallel compilation is enabled and will use up to 12 processors
 Warning (20031): Parallel compilation is enabled for 12 processors, but there are only 8 processors in the system. Runtime may increase due to over usage of the processor space.
@@ -2484,7 +2486,7 @@ Info (176235): Finished register packing
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:08
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:06
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:05
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
@@ -2494,7 +2496,7 @@ Info (170195): Router estimated average interconnect usage is 1% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
-Info (11888): Total time spent on timing analysis during the Fitter is 2.18 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 2.12 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2502,13 +2504,13 @@ Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:06
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 1 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin io_scl has a permanently enabled output enable File: C:/course_work/src/main.vhd Line: 19
+    Info (169065): Pin io_scl has a permanently enabled output enable File: C:/course_work/src/main.vhd Line: 21
 Info (144001): Generated suppressed messages file C:/course_work/prj/output_files/main.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 7438 megabytes
-    Info: Processing ended: Thu Jun  1 23:34:12 2023
-    Info: Elapsed time: 00:00:44
-    Info: Total CPU time (on all processors): 00:02:52
+Info: Quartus Prime Fitter was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 7445 megabytes
+    Info: Processing ended: Sun Jun  4 19:29:33 2023
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:02:50
 
 
 +----------------------------+
